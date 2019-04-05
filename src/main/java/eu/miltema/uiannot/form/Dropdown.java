@@ -3,7 +3,7 @@ package eu.miltema.uiannot.form;
 import java.lang.annotation.*;
 
 /**
- * This field is displayed as a dropdown and must have a type Collection<Option> or similar.
+ * This field is displayed as a dropdown and must have a type Collection&lt;Option&gt; or similar.
  * @author margus
  */
 @Retention(RetentionPolicy.RUNTIME)

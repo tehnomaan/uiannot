@@ -20,8 +20,8 @@ apply plugin: 'java-library'
 apply plugin: 'eclipse'
 apply plugin: 'com.bmuschko.nexus'
 
-sourceCompatibility = 1.6
-targetCompatibility = 1.6
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
 
 group = "eu.miltema"
 archivesBaseName = "ui-annot"
