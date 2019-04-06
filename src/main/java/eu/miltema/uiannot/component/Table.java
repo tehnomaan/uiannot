@@ -8,7 +8,7 @@ import java.lang.annotation.*;
  * @author Margus
  */
 @Retention(RetentionPolicy.RUNTIME)
-@Target(ElementType.FIELD)
+@Target({ElementType.FIELD, ElementType.TYPE})
 public @interface Table {
 	public enum Style {COLUMN_HEADERS, ROW_HEADERS, NO_HEADERS, BOTH_HEADERS, DEFAULT}
 

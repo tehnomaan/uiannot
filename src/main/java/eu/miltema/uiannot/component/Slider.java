@@ -7,7 +7,7 @@ import java.lang.annotation.*;
  * @author Margus
  */
 @Retention(RetentionPolicy.RUNTIME)
-@Target(ElementType.FIELD)
+@Target({ElementType.FIELD, ElementType.TYPE})
 public @interface Slider {
 
 	/**
