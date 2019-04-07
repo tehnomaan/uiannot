@@ -1,4 +1,4 @@
-package eu.miltema.uiannot.component;
+package eu.miltema.uiannot;
 
 import java.lang.annotation.*;
 
