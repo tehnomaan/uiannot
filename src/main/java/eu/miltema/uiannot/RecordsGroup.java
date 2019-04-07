@@ -5,8 +5,8 @@ import java.util.*;
 /**
  * This class is used to declare @ItemList or @Table, which includes grouping, for example:
  * 
- * @ItemList
- * Collection<RecordGroup<MyRecord>> groups;
+ * &#64;ItemList
+ * Collection&lt;RecordGroup&lt;MyRecord&gt;&gt; groups;
  */
 public class RecordsGroup<R> implements Comparable<RecordsGroup<R>> {
 	public String title;
