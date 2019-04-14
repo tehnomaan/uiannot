@@ -3,7 +3,7 @@ package eu.miltema.uiannot;
 import java.lang.annotation.*;
 
 /**
- * Hides associated HTML widget
+ * This field is not rendered as an HTML widget. The field only exists in model.
  * @author Margus Selge
  */
 @Retention(RetentionPolicy.RUNTIME)
