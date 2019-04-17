@@ -10,12 +10,14 @@ import java.lang.annotation.*;
 @Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType.FIELD)
 public @interface Format {
-	public static final String DECIMALS0 = "fmt.decimals0";
-	public static final String DECIMALS1 = "fmt.decimals1";
-	public static final String DECIMALS2 = "fmt.decimals2";
+	public static final String DECIMALS0 = "format.decimals0";
+	public static final String DECIMALS1 = "format.decimals1";
+	public static final String DECIMALS2 = "format.decimals2";
+	public static final String DECIMALS3 = "format.decimals3";
+	public static final String DECIMALS4 = "format.decimals4";
 
 	/**
 	 * @return format string key in labels file
 	 */
-	public String value() default "";
+	public String value();
 }

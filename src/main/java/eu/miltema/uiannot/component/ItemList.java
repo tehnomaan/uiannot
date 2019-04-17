@@ -4,7 +4,8 @@ import java.lang.annotation.*;
 
 /**
  * This field must have a collection type and is displayed as item list.
- * Each fields of collection item must have @ItemPos-annotation
+ * Items in collection must be either custom types or RecordsGroup-s.
+ * Custom types can be annotated with @Flex, in order to make use of flexbox behaviour
  * @author Margus
  */
 @Retention(RetentionPolicy.RUNTIME)
