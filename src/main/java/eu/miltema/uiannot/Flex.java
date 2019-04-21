@@ -11,13 +11,27 @@ import java.lang.annotation.*;
 @Target(ElementType.FIELD)
 public @interface Flex {
 
-	/**
-	 * GROW: this element horizontally fills the available space in parent flexbox container<br>
-	 * FILL: this element has equal with with all @FILL elements in parent flexbox container<br>
-	 * SHRINK: this element is horizontally as small as possible, using word wrap<br>
-	 * DEFAULT: this element in parent flexbox container has no particular flex-style
-	 */
-	public enum Size {GROW, FILL, SHRINK, DEFAULT}
+	public enum Size {
+		/**
+		 * This element horizontally fills the available space in parent flexbox container
+		 */
+		GROW,
+
+		/**
+		 * This element has equal with with all @FILL elements in parent flexbox container
+		 */
+		FILL,
+
+		/**
+		 * This element is horizontally as small as possible, using word wrap
+		 */
+		SHRINK,
+
+		/**
+		 * This element in parent flexbox container has no particular flex-style
+		 */
+		DEFAULT
+	}
 
 	/**
 	 * @return sizing behaviour of this element

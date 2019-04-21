@@ -10,12 +10,22 @@ import java.lang.annotation.*;
 @Target(ElementType.FIELD)
 public @interface Link {
 
-	/**
-	 * LABEL: field value represents link label<br>
-	 * HREF: field value represents target href<br>
-	 * IGNORE_VALUE: field value is not used for the link
-	 */
-	public enum ValueIs {LABEL, HREF, IGNORE_VALUE};
+	public enum ValueIs {
+		/**
+		 * Field value represents link label
+		 */
+		LABEL,
+
+		/**
+		 * Field value represents target href
+		 */
+		HREF,
+
+		/**
+		 * Field value is not used for the link
+		 */
+		IGNORE_VALUE
+	};
 
 	/**
 	 * @return the meaning of field value

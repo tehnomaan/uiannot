@@ -3,45 +3,37 @@ package eu.miltema.uiannot;
 import java.lang.annotation.*;
 
 /**
- * Adds an icon to current element/widget. The interpretation of icon value() depends on implementing library.
- * For example, the icon can be a JPEG image, a CSS class or one of these:
- * 
- * See also:
- * 1) http://fontawesome.io/icons
- * 2) http://www.webhostinghub.com/glyphs/#howToUse
- * 3) https://material.io/icons
- * 4) Use http://fontello.com, to make custom font+CSS from SVG-files; Get SVG-files from https://www.flaticon.com
+ * Render this field as icon
  * @author Margus
  */
 @Retention(RetentionPolicy.RUNTIME)
-@Target(ElementType.FIELD)
+@Target({ElementType.FIELD, ElementType.METHOD})
 public @interface Icon {
-	
-	public enum Position {LEADING, TRAILING, DEFAULT}
+
+	public enum Mode {
+		/**
+		 * This String-field is displayed as an icon; icon identifier is fetched from field value (not from annotation attribute id)
+		 */
+		STANDALONE,
+
+		/**
+		 * Icon is displayed left of current element's label; 'id' identifies icon image and style
+		 */
+		LEFTSIDE,
+
+		/**
+		 * Icon is displayed right of current element's label; 'id' identifies icon image and style
+		 */
+		RIGHTSIDE
+	}
 
 	/**
-	 * HTML rendering depends on implementing library. For example, it can be one of these:
-	 * 1) for font-awesome, "fa fa-filter"; complete list is available at http://fontawesome.io/icons
-	 * 2) for webhostinghub, "icon-filter"; complete list is available at http://www.webhostinghub.com/glyphs
-	 * Properties value and fromField are mutually exclusive.
-	 * @return icon identifier
+	 * @return how this icon is rendered
 	 */
-	public String value() default "";
+	Mode mode() default Mode.STANDALONE;
 
 	/**
-	 * Icon is dynamic and its value is read from another field (not from annotation value=...).
-	 * Properties value and fromField are mutually exclusive.
-	 * @return field name for icon identifier
+	 * @return icon identifier. For example, Font-awesome icons are identified like this: "fas fa-camera fa-8x fa-fw"
 	 */
-	public String fromField() default "";
-
-	/**
-	 * @return leading=icon appears before element, trailing=icon appears after element
-	 */
-	public Position pos() default Position.DEFAULT;
-
-	/**
-	 * @return extra CSS for the icon
-	 */
-	public String cssClass() default "";
+	String id() default "";
 }
