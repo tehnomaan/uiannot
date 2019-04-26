@@ -25,7 +25,7 @@ targetCompatibility = 1.8
 
 group = "eu.miltema"
 archivesBaseName = "ui-annot"
-version = "0.4.1-SNAPSHOT"
+version = "0.4.1"
 
 eclipse {
 	classpath {
