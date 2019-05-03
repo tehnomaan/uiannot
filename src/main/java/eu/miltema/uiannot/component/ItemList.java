@@ -12,4 +12,8 @@ import java.lang.annotation.*;
 @Target({ElementType.FIELD, ElementType.TYPE})
 public @interface ItemList {
 
+	/**
+	 * @return icon identifier for missing records. The default is "fas fa-exclamation-circle fa-4x"
+	 */
+	String missingIconId() default "fas fa-exclamation-circle fa-4x mr-2";
 }
