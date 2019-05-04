@@ -17,6 +17,11 @@ public @interface Badge {
 		STANDALONE,
 
 		/**
+		 * This field is the badge. Badge label is fetched from labels file
+		 */
+		STANDALONE_STATIC,
+
+		/**
 		 * Badge is displayed left of current element's label; 'labelFrom' indicates badge label source
 		 */
 		LEFTSIDE,
@@ -39,5 +44,14 @@ public @interface Badge {
 	 */
 	public Color color() default Color.DEFAULT;
 
+	/**
+	 * @return attribute name containing the color for current badge; by default, attribute 'color' indicates badge color.
+	 * colorFrom only works with STANDALONE and STANDALONE_STATIC badges
+	 */
+	public String colorFrom() default "";
+
+	/**
+	 * @return attribute name for fetching label value; by default use current attribute or labels-file (mode=STANDALONE_STATIC) for badge label
+	 */
 	public String labelFrom() default "";
 }
