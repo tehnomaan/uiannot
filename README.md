@@ -8,6 +8,6 @@ The library has no dependencies other than Java 1.8+. To use UI-annot annotation
 
 ```gradle
 dependencies {
-    implementation 'eu.miltema:ui-annot:0.4.1'
+    implementation 'eu.miltema:ui-annot:0.5.1'
 }
 ```

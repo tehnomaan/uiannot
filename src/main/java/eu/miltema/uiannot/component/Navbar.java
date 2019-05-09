@@ -1,16 +1,14 @@
 package eu.miltema.uiannot.component;
 
-import java.lang.annotation.ElementType;
-import java.lang.annotation.Retention;
-import java.lang.annotation.RetentionPolicy;
-import java.lang.annotation.Target;
+import java.lang.annotation.*;
 
 /**
- * Declares that the field represents a navi-bar (horizontal links).
- * The type of a navi-bar must be a custom class, with @Link-s in it (other elements are permitted as well)
+ * Declares that current String-field represents a navi-bar (horizontal links).
+ * The field itself holds the parameters for the links: each link has the same parameters.
+ * Navbar only makes sense on a form and is ignored inside other components
  */
 @Retention(RetentionPolicy.RUNTIME)
 @Target({ElementType.FIELD, ElementType.TYPE})
 public @interface Navbar {
-	boolean alignLeft() default false;
+	Class<?>[] value();//target components
 }
